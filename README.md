@@ -1,4 +1,4 @@
-# Gemba User Story Toolkit
+# Gemba Product Management Toolkit
 
 Pipeline de **definición de producto** para Claude Code: convierte un PRD (o una idea) en user stories validadas y priorizadas, empaquetadas como entrada para cualquier herramienta de **Spec-Driven Development** (SDD).
 
@@ -47,11 +47,11 @@ Cubre el **qué** y el **por qué**: problema, JTBDs con evidencia, stories con 
 ### Como plugin de Claude Code (recomendado)
 
 ```bash
-claude plugin marketplace add joseperezaguera/gemba-user-story-toolkit
-claude plugin install gemba-user-story-toolkit@gemba
+claude plugin marketplace add joseperezaguera/gemba-product-management-toolkit
+claude plugin install gemba-product-management-toolkit@gemba
 ```
 
-O desde una sesión de Claude Code: `/plugin marketplace add joseperezaguera/gemba-user-story-toolkit` y `/plugin install gemba-user-story-toolkit@gemba`.
+O desde una sesión de Claude Code: `/plugin marketplace add joseperezaguera/gemba-product-management-toolkit` y `/plugin install gemba-product-management-toolkit@gemba`.
 
 ---
 

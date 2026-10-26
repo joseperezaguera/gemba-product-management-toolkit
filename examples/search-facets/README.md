@@ -1,6 +1,6 @@
 # Walkthrough: Búsqueda con Facetas en ShopSearch
 
-Ejemplo end-to-end del pipeline **PRD → Gemba User Story Toolkit → `spec-input.md`** aplicado a una feature realista: añadir facetas inline en el buscador para que un cliente recurrente pueda desambiguar consultas comunes (ej: "café" → molido / grano / soluble / descafeinado).
+Ejemplo end-to-end del pipeline **PRD → Gemba Product Management Toolkit → `spec-input.md`** aplicado a una feature realista: añadir facetas inline en el buscador para que un cliente recurrente pueda desambiguar consultas comunes (ej: "café" → molido / grano / soluble / descafeinado).
 
 **Por qué este ejemplo.** Ya tenemos el buscador en producción; ahora añadimos una mejora identificada por el equipo: el ~12% de queries son ambiguas, y la hipótesis es que un filtro de facetas inline reduce la fricción y mejora la conversión a "añadir al carrito".
 

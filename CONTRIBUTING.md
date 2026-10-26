@@ -1,6 +1,6 @@
 # Contributing
 
-Gracias por considerar contribuir a Gemba User Story Toolkit. Este es un proyecto en evolución y la mejor versión sale de uso real en equipos diversos.
+Gracias por considerar contribuir a Gemba Product Management Toolkit. Este es un proyecto en evolución y la mejor versión sale de uso real en equipos diversos.
 
 ## Antes de abrir un PR
 
