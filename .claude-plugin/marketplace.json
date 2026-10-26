@@ -1,0 +1,14 @@
+{
+  "name": "gemba",
+  "owner": {
+    "name": "José Ramón Pérez Agüera",
+    "url": "https://www.gemba.es"
+  },
+  "plugins": [
+    {
+      "name": "gemba-user-story-toolkit",
+      "source": "./",
+      "description": "Pipeline PRD/GSD → JTBDs → User Stories validadas y priorizadas."
+    }
+  ]
+}
