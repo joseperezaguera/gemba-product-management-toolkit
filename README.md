@@ -1,4 +1,4 @@
-# Mercadona User Story Toolkit
+# Gemba User Story Toolkit
 
 Pipeline de **definición de producto** para Claude Code: convierte un PRD (o un proyecto GSD) en user stories validadas y priorizadas, listas para que tu equipo de ingeniería las implemente.
 
