@@ -8,7 +8,7 @@ Gracias por considerar contribuir a Gemba User Story Toolkit. Este es un proyect
 
 2. **Mantén la filosofía copiloto.** Las skills NO deben inventar datos. Si tu cambio hace que una skill genere métricas, JTBDs o criterios sin evidencia explícita del usuario, no se mergea.
 
-3. **No acoples a herramientas externas.** El toolkit es agnóstico de Notion/Jira/Linear. Si necesitas integración con una herramienta concreta, ponla por fuera (configuración del usuario, MCP, etc.) — no dentro de las skills.
+3. **No acoples a herramientas externas.** El toolkit es agnóstico de Notion/Jira/Linear y de cualquier herramienta de SDD concreta. Si necesitas integración con una herramienta concreta, ponla por fuera (configuración del usuario, MCP, etc.) — no dentro de las skills.
 
 ## Cambios bienvenidos
 
@@ -16,7 +16,7 @@ Gracias por considerar contribuir a Gemba User Story Toolkit. Este es un proyect
 - **Mejoras en heurísticas** de splitting/priorización con justificación clara
 - **Nuevas reglas anti-waterfall** con caso de uso real
 - **Soporte para nuevos formatos de PRD** (manteniendo compatibilidad con el actual)
-- **Bridges adicionales** (a otras herramientas de planning más allá de GSD)
+- **Mejoras en `spec-input.md`** que lo hagan más útil como entrada de SDD sin acoplarlo a una herramienta concreta
 - **Ejemplos end-to-end** de equipos reales (con permiso)
 - **Traducciones** de las skills a otros idiomas
 
@@ -36,7 +36,7 @@ Gracias por considerar contribuir a Gemba User Story Toolkit. Este es un proyect
 ├── skills/                # Skills (lógica + references)
 │   ├── <skill>/SKILL.md
 │   └── <skill>/references/
-├── bridge/                # gsd-bridge.py (CLI standalone)
+├── scripts/               # Cálculos deterministas (scoring) + tests
 ├── examples/              # Walkthroughs end-to-end
 ├── shared-config.md       # Config compartida por skills
 ├── README.md
@@ -46,7 +46,7 @@ Gracias por considerar contribuir a Gemba User Story Toolkit. Este es un proyect
 
 ## Tests
 
-Los smoke tests del bridge están en `bridge/tests/` (próximamente). Para skills, validar manualmente con un PRD real antes de PR.
+Los tests de los scripts están en `scripts/tests/` (`python3 -m unittest discover -s scripts/tests`). Para skills, validar manualmente con un PRD real antes de PR.
 
 ## Comunicación
 

@@ -6,7 +6,7 @@ description: |
 
   POSICIÓN EN EL PIPELINE:
   - DESPUÉS de /validate-stories (recibe stories validadas con scoring 6D)
-  - ÚLTIMO paso antes de pasar a tu issue tracker o ejecutor
+  - ANTES de /prioritize y /handoff
   - Puede ejecutarse independientemente sobre cualquier story
 
   USAR CUANDO:
@@ -44,8 +44,7 @@ Stories grandes = Alto riesgo = Feedback lento = Desperdicio
 quality-guard → research → stories → validate-stories → 🆕 SPLIT-STORIES
                                                               │
                                                               ▼
-                                                        Stories listas
-                                                        para Jira
+                                                   /prioritize → /handoff
 ```
 
 ### Cuándo aplicar splitting automáticamente

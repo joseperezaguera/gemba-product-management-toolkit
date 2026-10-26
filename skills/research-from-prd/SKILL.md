@@ -54,7 +54,7 @@ Flujo: prd-quality-guard → **Preparación** → B1 Propósito → B2 Plan → 
 
 ### Reutilización de evidencia previa
 
-Si el PRD viene de `/from-gsd` y el proyecto GSD tiene `phases/N/RESEARCH.md`, esa evidencia se incorpora al inventario. Pasar al comando `--evidence-from=.planning/phases/N/RESEARCH.md` para evitar duplicar entrevistas ya hechas.
+Si ya existe research previo (notas, informe de discovery), esa evidencia se incorpora al inventario. Pasar al comando `--evidence-from=<fichero>` para evitar duplicar entrevistas ya hechas.
 
 ### Regla: Gaps vs Research
 

@@ -148,5 +148,5 @@ El reporte se crea como página de Notion.
 4. **NUNCA** sugerir que una sección vacía "no es necesaria"
 5. **SIEMPRE** generar como markdown (no como documento ofimático)
 6. Si el PRD tiene Discovery débil (D3 < 5), **SIEMPRE** recomendar más Discovery antes de research
-7. Si el PRD viene de otro formato (GSD output, Brief, etc.), indicar qué secciones se trasladaron correctamente y cuáles necesitan completarse
+7. Si el PRD viene de otro formato (Brief, one-pager, etc.), indicar qué secciones se trasladaron correctamente y cuáles necesitan completarse
 8. Las recomendaciones deben ayudar al PM a mejorar su PRD, no a diseñar la solución

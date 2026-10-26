@@ -8,7 +8,7 @@
     {
       "name": "gemba-user-story-toolkit",
       "source": "./",
-      "description": "Pipeline PRD/GSD → JTBDs → User Stories validadas y priorizadas."
+      "description": "Pipeline PRD → JTBDs → User Stories validadas y priorizadas → spec-input.md para Spec-Driven Development."
     }
   ]
 }

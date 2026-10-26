@@ -30,4 +30,4 @@ Ejecuta `/research-from-prd` completo: Gap Detection → Diseño de entrevistas.
 
 **Siguiente paso:** Realizar entrevistas → `/analyze-research` con las notas.
 
-**Nota:** Si vienes de `/from-gsd` y tienes `phases/N/RESEARCH.md` con evidencia previa, indícalo al comando con `--evidence-from=.planning/phases/N/RESEARCH.md` para no duplicar trabajo.
+**Nota:** Si ya tienes research previo (notas, informe de discovery), indícalo con `--evidence-from=<fichero>` para no duplicar trabajo.

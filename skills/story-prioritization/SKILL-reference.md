@@ -277,5 +277,5 @@ STORY-F (PS: 2.3)
 
 ## Siguiente Paso
 
-Llevar Batch 1 a Jira como Sprint 1.
+`/handoff` para generar el `spec-input.md` de entrada a la herramienta SDD (o llevar Batch 1 al issue tracker como Sprint 1).
 ```

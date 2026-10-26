@@ -20,7 +20,7 @@ Antes de empezar, decide el modo de ejecución según la procedencia de las stor
 
 | Procedencia | Modo |
 |---|---|
-| Generadas en ESTA sesión vía `/stories`, `/build-story`, `/from-gsd` | **Sub-agente fresco obligatorio** |
+| Generadas en ESTA sesión vía `/stories`, `/build-story` | **Sub-agente fresco obligatorio** |
 | Pegadas, fichero externo, issue tracker, sesión previa | Sesión actual válida |
 
 **Por qué:** si el revisor ya vio cómo se generó la story, justifica las decisiones en lugar de cuestionarlas. Lada Kesseler — `feedback-flip`.
