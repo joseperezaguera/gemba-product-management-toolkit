@@ -36,62 +36,59 @@ NO hacer:
 | Skill | Rol | Trigger ejemplo |
 |-------|-----|-----------------|
 | `prd-quality-guard` | Quality gate: evaluar PRD antes de research | "Analizar calidad de este PRD" |
-| `gsd-to-prd` | Mapear artefactos GSD (.planning/) → PRD sintético | "/from-gsd" |
 | `research-from-prd` | Gap detection + Research Mom Test desde PRD | "Research para el PRD de..." |
 | `user-story-builder` | Crear stories desde cero (sin PRD) | "Ayúdame a escribir una story" |
 | `jtbd-to-stories` | Generar stories estructuradas desde JTBDs | "Convertir JTBDs en stories" |
 | `user-story-quality-coach` | Validar stories con scoring 6 dimensiones + antipatrones | "Validar estas stories" |
 | `story-splitting` | Detectar stories grandes y proponer splits incrementales | "¿Cómo divido esta story?" |
 | `story-prioritization` | Priorización con 5 lentes + grafo de dependencias | "Prioriza el batch del sprint" |
+| `sdd-handoff` | Empaquetar el resultado en `spec-input.md` para herramientas SDD | "/handoff" |
 
 ---
 
-## Pipeline Unificado (3 vías de entrada)
+## Pipeline Unificado (2 vías de entrada)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         FUENTES DE ENTRADA                          │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   PRD               GSD              Sin documento                  │
-│    │                 │                    │                         │
-│    │           /from-gsd                  │                         │
-│    │                 │                    │                         │
-│    │     [completar GAPs marcados]        │                         │
-│    │                 │                    │                         │
-│    └────────┬────────┘                    │                         │
-│             │                             │                         │
-│             ▼                             ▼                         │
-│   /prd-quality-guard            /user-story-builder                 │
-│             │                             │                         │
-│             ▼                             │                         │
-│       /research                           │                         │
-│   (entrevistas reales)                    │                         │
-│             │                             │                         │
-│             ▼                             │                         │
-│    /analyze-research                      │                         │
-│             │                             │                         │
-│             ▼                             │                         │
-│        /stories                           │                         │
-│             │                             │                         │
-│             └──────────────┬──────────────┘                         │
-│                            ▼                                        │
-│                  /validate-stories                                  │
-│                            │                                        │
-│                            ▼                                        │
-│                  /split-stories (opcional)                          │
-│                            │                                        │
-│                            ▼                                        │
-│                    /prioritize                                      │
-│                            │                                        │
-│                            ▼                                        │
-│            Stories priorizadas en batches                           │
-│         → tu issue tracker / Superpowers / equipo                   │
+│            PRD                            Sin documento             │
+│             │                                    │                  │
+│             ▼                                    ▼                  │
+│   /prd-quality-guard                   /user-story-builder          │
+│             │                                    │                  │
+│             ▼                                    │                  │
+│       /research                                  │                  │
+│   (entrevistas reales)                           │                  │
+│             │                                    │                  │
+│             ▼                                    │                  │
+│    /analyze-research                             │                  │
+│             │                                    │                  │
+│             ▼                                    │                  │
+│        /stories                                  │                  │
+│             │                                    │                  │
+│             └─────────────────┬──────────────────┘                  │
+│                               ▼                                     │
+│                     /validate-stories                               │
+│                               │                                     │
+│                               ▼                                     │
+│                     /split-stories (opcional)                       │
+│                               │                                     │
+│                               ▼                                     │
+│                         /prioritize                                 │
+│                               │                                     │
+│                               ▼                                     │
+│                          /handoff                                   │
+│                               │                                     │
+│                               ▼                                     │
+│                        spec-input.md                                │
+│        → cualquier herramienta de Spec-Driven Development           │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-**Bridge a ejecución:** `bridge/gsd-bridge.py` mantiene consistencia entre `.planning/` (GSD) y commits del ejecutor (p. ej. Superpowers). Ver `bridge/README.md`.
+**Frontera del plugin:** el plugin produce el *qué* y el *por qué* (problema, JTBDs, stories, criterios, prioridad). El *cómo* (plan técnico, tareas, código) lo genera la herramienta de SDD a partir de `spec-input.md`. El plugin no se acopla a ninguna herramienta concreta.
 
 ---
 
@@ -201,14 +198,14 @@ Cada equipo configura su integración con la herramienta de documentos por fuera
 | Skill | Versión | Notas |
 |-------|---------|-------|
 | prd-quality-guard | 1.0 | Quality gate del PRD |
-| gsd-to-prd | 1.0 | Mapeo GSD → PRD (Ruta D) |
 | research-from-prd | 1.0 | Gap detection + research design |
 | jtbd-to-stories | 2.0 | Generación de stories con scoring |
 | user-story-builder | 1.0 | Stories desde cero |
 | user-story-quality-coach | 1.0 | Validación 6D + antipatrones |
 | story-splitting | 1.0 | Splits incrementales |
 | story-prioritization | 1.0 | Priorización con 5 lentes |
+| sdd-handoff | 1.0 | spec-input.md neutro para SDD |
 
 ---
 
-*Plugin v1.1.0 — MIT License — https://github.com/joseperezaguera/gemba-user-story-toolkit*
+*Plugin v2.0.0 — MIT License — https://github.com/joseperezaguera/gemba-user-story-toolkit*

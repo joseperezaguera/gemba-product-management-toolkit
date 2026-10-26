@@ -1,6 +1,6 @@
-# PRD — ShopSearch Faceted Search (completado)
+# PRD — ShopSearch Faceted Search
 
-**Origen:** `prd-from-gsd.md` (generado por `/from-gsd`) + GAPs completados manualmente por el PM tras revisión inicial.
+**Origen:** PRD escrito por el PM tras un spike técnico y una primera ronda de discovery.
 **Fecha:** 2026-04-30
 **Estado:** Listo para `/prd-quality-guard`
 
@@ -39,13 +39,13 @@ Extensión del buscador ShopSearch para soportar facetas inline: cuando una cons
 
 ## 1.4 Próximos Pasos
 
-Según ROADMAP.md, las fases pendientes son:
+Fases previstas:
 
 1. **Phase 1: Faceted Search Backend** — Detección de ambigüedad + generación algorítmica de facetas
 2. **Phase 2: Faceted Search UI** — Chips inline en mobile/web con apply/remove
 3. **Phase 3: Telemetry & Validation** — Eventos de analytics + dashboard para decidir GA o rollback
 
-Acción inmediata: ejecutar `/prd-quality-guard prd-completed.md` para validar este PRD, luego `/research source_type=PRD` para diseñar entrevistas adicionales (ya hay evidencia inicial en §1.3 Penumbras pero queremos validar JTBDs antes de implementar).
+Acción inmediata: ejecutar `/prd-quality-guard prd.md` para validar este PRD, luego `/research source_type=PRD` para diseñar entrevistas adicionales (ya hay evidencia inicial en §1.3 Penumbras pero queremos validar JTBDs antes de implementar).
 
 ---
 
@@ -62,7 +62,7 @@ Acción inmediata: ejecutar `/prd-quality-guard prd-completed.md` para validar e
 **Riesgos identificados:**
 
 - Que las facetas auto-generadas no sean intuitivas para el cliente (riesgo de UX) — mitigación: research previo + iteración rápida en Phase 2
-- Que la latencia de generación impacte el SLA del search (riesgo técnico) — mitigación: SPEC.md fija constraint p99 ≤195ms
+- Que la latencia de generación impacte el SLA del search (riesgo técnico) — mitigación: restricción p99 ≤195ms en el endpoint
 - Que el feature canibalice las queries específicas en lugar de mejorar las ambiguas (riesgo de producto) — mitigación: dispositivo de detección de ambigüedad + threshold configurable
 
 ## 2.2 Aspectos Financieros
@@ -81,7 +81,7 @@ Acción inmediata: ejecutar `/prd-quality-guard prd-completed.md` para validar e
 
 ## 2.3 Métricas
 
-**Comportamientos observables (de ROADMAP.md):**
+**Comportamientos observables:**
 
 *Phase 1 — Backend:* endpoint `/search?q=café` devuelve `facets` con 3-5 entradas; queries específicas no las llevan; threshold configurable; p99 ≤200ms.
 *Phase 2 — UI:* chips renderizados en mobile/web; tap aplica faceta sin recargar; transición ≤300ms.
@@ -104,13 +104,13 @@ Acción inmediata: ejecutar `/prd-quality-guard prd-completed.md` para validar e
 
 **Centros/ubicaciones:** N/A (feature de app, ámbito global).
 
-**Fases de rollout (de ROADMAP.md):**
+**Fases de rollout:**
 
-| Fase | Goal | Plans | Depends on |
-|------|------|-------|------------|
-| 1    | Faceted Search Backend | 1 | Nothing |
-| 2    | Faceted Search UI | 1 | Phase 1 |
-| 3    | Telemetry & Validation | 1 | Phase 2 |
+| Fase | Objetivo | Depende de |
+|------|----------|------------|
+| 1    | Faceted Search Backend | — |
+| 2    | Faceted Search UI | Phase 1 |
+| 3    | Telemetry & Validation | Phase 2 |
 
 Tras Phase 3, periodo de monitorización de 4-8 semanas con feature flag al 10% → 50% → 100% según métricas.
 
@@ -142,7 +142,25 @@ Tras Phase 3, periodo de monitorización de 4-8 semanas con feature flag al 10% 
 
 ## 3.3 Funcionalidades Principales
 
-(Sin cambios respecto a `prd-from-gsd.md` — ver allí.)
+**Features must-have (v1):**
+
+- **DETECT-01**: Clasificación de queries ambiguas usando dispersión de categorías en top-K
+  - Acceptance: Test con 50 queries (25 ambiguas, 25 específicas) — ≥90% aciertos
+- **DETECT-02**: Threshold de ambigüedad configurable vía feature flag
+  - Acceptance: Cambiar el flag en runtime modifica clasificación sin reiniciar el servicio
+- **DETECT-03**: Clasificación en <10ms p99
+- **FACET-01**: Selección de 3-5 facetas con mayor poder discriminatorio
+  - Acceptance: Para cada query de prueba ambigua, el array tiene 3-5 facetas; cada faceta tiene 2-10 valores
+- **FACET-02**: Cálculo de poder discriminatorio (entropía normalizada)
+- **FACET-03**: Ordenación de facetas por uso histórico
+- **FACET-04**: Ordenación de valores por frecuencia local en resultados
+- **UI-01 a UI-05**: Chips horizontales debajo del search bar; scroll horizontal; apply/remove sin recargar
+- **TELEM-01 a TELEM-04**: Eventos `facet_shown`, `facet_applied`, `facet_dismissed`
+
+**Features deferred (v2):**
+
+- Multi-faceta combinada (MULTI-01, MULTI-02, MULTI-03)
+- Personalización por historial del cliente (PERS-01, PERS-02)
 
 ## 3.4 Flujos de Usuario
 
@@ -176,14 +194,20 @@ Tras Phase 3, periodo de monitorización de 4-8 semanas con feature flag al 10% 
 | **¿Qué pasa si una query es ambigua pero el catálogo no tiene atributos estructurados para diferenciarla?** | El generador devuelve <3 facetas; en ese caso, el frontend no renderiza chips. Caso esperado: muy raro porque casi todo el catálogo tiene atributos. |
 | **¿Cómo se actualiza `facet_usage_stats` (tabla de uso histórico)?** | En v1, lectura desde dump pre-calculado actualizado diariamente. En Phase 3, los eventos `facet_applied` alimentan la tabla en near-real-time. |
 | **¿Las facetas funcionan con búsqueda por voz?** | No en v1. Out of scope (ver §3.6). |
-| **¿Qué pasa si el flag está desactivado?** | El endpoint responde idéntico al pre-feature. Test de regresión lo verifica (acceptance #7 del SPEC.md). |
+| **¿Qué pasa si el flag está desactivado?** | El endpoint responde idéntico al pre-feature. Un test de regresión lo verifica. |
 | **(Eng) ¿Dónde se calcula la entropía discriminatoria?** | En el search service, post-ranker, antes de serializar la respuesta. <10ms p99 según DETECT-03. |
 | **(Eng) ¿Cómo se hace el A/B test?** | Feature flag con audiencia gradual: 10% → 50% → 100%, comparando KPIs vs grupo de control. |
 
 ## 3.6 Exclusiones
 
-(Sin cambios respecto a `prd-from-gsd.md` — ver allí.)
+| Exclusión | Razón |
+|-----------|-------|
+| Multi-faceta combinada (≥2 facetas) | Diferida a v2 — aprender uso individual primero |
+| Facetas en queries no ambiguas | Añade ruido visual sin valor diferencial |
+| Facetas curated manualmente | No escalable; opuesto a la decisión de generación algorítmica |
+| Facetas en búsqueda por voz | Depende del roadmap de voz, fuera de este trimestre |
+| Sidebar de facetas | Consume viewport en mobile-first |
 
 ---
 
-*PRD completado el 2026-04-30 por José Pérez (PM). Listo para `/prd-quality-guard`.*
+*PRD escrito el 2026-04-30 por José Pérez (PM). Listo para `/prd-quality-guard`.*

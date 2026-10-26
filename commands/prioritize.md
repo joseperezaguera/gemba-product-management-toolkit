@@ -28,4 +28,4 @@ Ejecuta `/story-prioritization` para priorizar stories validadas y generar batch
 7. Validar reglas anti-waterfall (AW-1 a AW-5)
 8. Generar reporte de priorización
 
-**Siguiente paso:** Llevar Batch 1 a tu issue tracker como Sprint/Iteración (o pasarlo a Superpowers para implementación con `/superpowers:writing-plans`).
+**Siguiente paso:** `/handoff` para empaquetar los batches en un `spec-input.md` que sirva de entrada a tu herramienta de SDD (o llevar Batch 1 a tu issue tracker).

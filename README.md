@@ -1,15 +1,15 @@
 # Gemba User Story Toolkit
 
-Pipeline de **definición de producto** para Claude Code: convierte un PRD (o un proyecto GSD) en user stories validadas y priorizadas, listas para que tu equipo de ingeniería las implemente.
+Pipeline de **definición de producto** para Claude Code: convierte un PRD (o una idea) en user stories validadas y priorizadas, empaquetadas como entrada para cualquier herramienta de **Spec-Driven Development** (SDD).
 
 ---
 
 ## ¿Qué hace?
 
-Toma un documento de producto (PRD, output de GSD, o nada) y produce **user stories que aprobarías sin reescribir**: con JTBD, criterios de aceptación falsables, scoring de calidad y orden de entrega anti-waterfall.
+Toma un documento de producto (PRD, o nada) y produce **user stories que aprobarías sin reescribir**: con JTBD, criterios de aceptación falsables, scoring de calidad y orden de entrega anti-waterfall.
 
 ```
-PRD / GSD / vacío
+PRD / vacío
     │
     ▼
 [ Quality gate ] → [ Research design ] → [ Análisis ] →
@@ -18,10 +18,13 @@ PRD / GSD / vacío
 [ Stories con JTBD ] → [ Validación ] → [ Splitting ] → [ Priorización ]
     │
     ▼
-Stories listas para implementación
+[ Handoff ] → spec-input.md
+    │
+    ▼
+Tu herramienta de SDD (Spec Kit, Kiro, OpenSpec…) o tu equipo
 ```
 
-Cubre el "antes" del código. Para el "durante" del código (implementación), se integra con [Superpowers](https://github.com/...) vía el bridge incluido (`bridge/gsd-bridge.py`).
+Cubre el **qué** y el **por qué**: problema, JTBDs con evidencia, stories con criterios Given / When / Then y orden de entrega. El **cómo** (plan técnico, tareas, código) lo genera la herramienta de SDD que uses. El plugin no se acopla a ninguna: `spec-input.md` es Markdown neutro con IDs estables (`US-001`, `AC-001.1`) para mantener la trazabilidad.
 
 ---
 
@@ -30,7 +33,7 @@ Cubre el "antes" del código. Para el "durante" del código (implementación), s
 - **PMs** que quieren stories con criterios falsables, no "user wants better UX"
 - **Equipos de producto** que pasaron de Notion + Jira a un flujo asistido por agentes
 - **Equipos pequeños** sin PM dedicado que quieren un proceso ligero pero riguroso
-- **Equipos que ya usan GSD para planning** y quieren cerrar el bucle hasta stories ejecutables
+- **Equipos que usan Spec-Driven Development** y quieren que la spec parta de problemas validados, no de una idea sin contrastar
 
 **No es para ti** si:
 - Crees que las stories son una pérdida de tiempo y prefieres especificar todo en código
@@ -50,19 +53,6 @@ claude plugin install gemba-user-story-toolkit@gemba
 
 O desde una sesión de Claude Code: `/plugin marketplace add joseperezaguera/gemba-user-story-toolkit` y `/plugin install gemba-user-story-toolkit@gemba`.
 
-### Bridge GSD↔Superpowers (opcional)
-
-Si usas GSD para planning + Superpowers para ejecución:
-
-```bash
-# Copiar el script al PATH
-cp bridge/gsd-bridge.py /usr/local/bin/gsd-bridge
-chmod +x /usr/local/bin/gsd-bridge
-
-# Hook automático (opcional): añadir bloque a ~/.claude/settings.json
-# Ver bridge/sample-hook.json
-```
-
 ---
 
 ## Uso rápido
@@ -78,16 +68,10 @@ chmod +x /usr/local/bin/gsd-bridge
 /validate-stories                 # Scoring 6D + antipatrones
 /split-stories                    # Splits incrementales si son grandes
 /prioritize                       # Batches anti-waterfall
+/handoff                          # spec-input.md para tu herramienta de SDD
 ```
 
-### Tienes un proyecto GSD
-
-```
-/from-gsd .planning/              # Genera prd-from-gsd.md
-# ... completas GAPs marcados ...
-/prd-quality-guard prd-from-gsd.md
-# ... resto del pipeline igual que arriba ...
-```
+O todo seguido, con checkpoints entre pasos: `/pipeline`.
 
 ### No tienes nada
 
@@ -96,13 +80,14 @@ chmod +x /usr/local/bin/gsd-bridge
 /validate-stories
 /split-stories
 /prioritize
+/handoff
 ```
 
 ---
 
 ## Ejemplo end-to-end
 
-Ver [`examples/search-facets/`](examples/search-facets/): walkthrough completo del feature "filtro por facetas en búsqueda" implementado con GSD → toolkit → Superpowers.
+Ver [`examples/search-facets/`](examples/search-facets/): walkthrough completo del feature "filtro por facetas en búsqueda", desde el PRD hasta el `spec-input.md` final.
 
 ---
 
@@ -121,13 +106,13 @@ Esto es deliberado. La razón: si la skill rellena por ti, dejas de pensar — y
 | Skill | Rol |
 |-------|-----|
 | `prd-quality-guard` | Quality gate del PRD antes de research |
-| `gsd-to-prd` | Mapear artefactos GSD → PRD sintético |
 | `research-from-prd` | Gap detection + diseño de entrevistas Mom Test |
 | `user-story-builder` | Crear stories desde cero (sin PRD) |
 | `jtbd-to-stories` | Generar stories estructuradas desde JTBDs |
 | `user-story-quality-coach` | Validar stories con scoring 6D + antipatrones |
 | `story-splitting` | Detectar stories grandes y proponer splits |
 | `story-prioritization` | Priorización con 5 lentes + grafo de dependencias |
+| `sdd-handoff` | Empaquetar el resultado en `spec-input.md` para herramientas SDD |
 
 ---
 
@@ -147,4 +132,4 @@ MIT — ver [LICENSE](LICENSE).
 
 Diseñado y mantenido por [José Ramón Pérez Agüera](https://www.linkedin.com/in/joseaguera/). Forjado en producción durante 2025-2026; generalizado y open-sourced en mayo 2026.
 
-Inspiración: [Mom Test](http://momtestbook.com/) (Rob Fitzpatrick), [INVEST](https://en.wikipedia.org/wiki/INVEST_(mnemonic)), [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) (Christensen et al.), [Get Shit Done](https://github.com/...), [Superpowers](https://github.com/...).
+Inspiración: [Mom Test](http://momtestbook.com/) (Rob Fitzpatrick), [INVEST](https://en.wikipedia.org/wiki/INVEST_(mnemonic)), [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) (Christensen et al.).

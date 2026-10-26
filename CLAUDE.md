@@ -8,8 +8,7 @@ Instrucciones para trabajar con este repositorio. Este toolkit es un **plugin de
 .claude-plugin/plugin.json   # Manifesto del plugin (incluye `version`)
 commands/                    # Slash commands (.md)
 skills/<skill>/SKILL.md      # Skills + references/
-bridge/                      # gsd-bridge.py (CLI standalone) + tests
-scripts/                     # Scripts auxiliares de las skills
+scripts/                     # Scripts auxiliares de las skills + tests
 shared-config.md             # Config compartida
 examples/                    # Walkthroughs end-to-end
 ```
@@ -26,7 +25,7 @@ Aplicar SemVer al **contrato del plugin** (lo que un usuario invoca o consume), 
 
 - **PATCH** (`x.y.Z`) — corrección sin cambio de comportamiento observable:
   - Typos, mejoras de redacción en SKILL.md o commands/
-  - Bug fixes en scripts/ o bridge/ que dejan los mismos inputs/outputs
+  - Bug fixes en scripts/ que dejan los mismos inputs/outputs
   - Refactor interno de un script
   - Documentación (`README.md`, `CONTRIBUTING.md`, `examples/`)
 
@@ -34,7 +33,7 @@ Aplicar SemVer al **contrato del plugin** (lo que un usuario invoca o consume), 
   - Nueva skill o nuevo command
   - Nuevo flag opcional en un command existente
   - Nueva heurística aditiva en una skill (no cambia las existentes)
-  - Nuevo bridge / nuevo formato de PRD soportado
+  - Nuevo formato de PRD soportado / nueva sección opcional en `spec-input.md`
   - Nuevo script en `scripts/` invocado por skills
 
 - **MAJOR** (`X.0.0`) — cambio incompatible para usuarios existentes:
@@ -78,11 +77,11 @@ Antes de cerrar, comprueba que `plugin.json` está en el commit. Si falta, el PR
 ## Convenciones técnicas
 
 - **Skills/commands son contenido, no código.** Antes de añadir lógica, considerar si encaja como heurística en una skill existente.
-- **Sin acoplamiento a herramientas externas** (Jira, Notion, Linear) en skills. Las integraciones viven fuera del plugin (MCP, scripts del usuario).
+- **Sin acoplamiento a herramientas externas** (Jira, Notion, Linear, ni herramientas de SDD concretas) en skills. La salida es `spec-input.md` en Markdown neutro. Las integraciones viven fuera del plugin (MCP, scripts del usuario).
 - **Sin generación inventada.** Las skills no rellenan métricas, JTBDs ni criterios sin evidencia explícita del usuario. Esto es invariante del producto, no preferencia estética.
-- **Scripts deterministas en Python.** Cálculos repetibles (scoring, splitting) viven en `scripts/` y `bridge/`, no embebidos en prompts.
+- **Scripts deterministas en Python.** Cálculos repetibles (scoring, splitting) viven en `scripts/`, no embebidos en prompts.
 
 ## Tests
 
-- `bridge/tests/` — smoke tests del CLI standalone.
+- `scripts/tests/` — tests de los scripts de scoring (`python3 -m unittest discover -s scripts/tests`).
 - Skills/commands se validan manualmente con un PRD real antes de PR. No hay test runner automático para los prompts.

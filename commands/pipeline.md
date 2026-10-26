@@ -1,6 +1,6 @@
 ---
 name: pipeline
-description: "Ejecutar pipeline completo: PRD/GSD → Research → Stories → Validación → Splitting → Priorización"
+description: "Ejecutar pipeline completo: PRD → Research → Stories → Validación → Splitting → Priorización → Handoff a SDD"
 ---
 
 > **Paso 0 (obligatorio): Cargar ground-rules.** Antes de proceder, lee `shared-config.md` y aplica:
@@ -24,14 +24,12 @@ Preguntar al PM:
 
 > ¿Qué tipo de documento tienes como punto de partida?
 > 1. **PRD** — Documento con problema, solución, métricas, scope
-> 2. **GSD** — Proyecto con `.planning/` de Get Shit Done
-> 3. **Sin documento** — Empezar desde cero con guía conversacional
+> 2. **Sin documento** — Empezar desde cero con guía conversacional
 
 | Ruta | Secuencia |
 |---|---|
-| **A: PRD** | `prd-quality-guard → research → [entrevistas] → analyze-research → stories → validate-stories → split-stories → prioritize` |
-| **B: GSD** | `from-gsd → [completar GAPs] → prd-quality-guard → research → [entrevistas] → analyze-research → stories → validate-stories → split-stories → prioritize` |
-| **C: Sin doc** | `build-story → validate-stories → split-stories → prioritize` |
+| **A: PRD** | `prd-quality-guard → research → [entrevistas] → analyze-research → stories → validate-stories → split-stories → prioritize → handoff` |
+| **B: Sin doc** | `build-story → validate-stories → split-stories → prioritize → handoff` |
 
 ---
 
@@ -62,7 +60,6 @@ Para cada paso del pipeline, usa la herramienta `Agent` con:
 
 | # | Paso | Skill cargada por sub-agente | Input | Output |
 |---|---|---|---|---|
-| A0 | from-gsd | `skills/gsd-to-prd/SKILL.md` | Ruta a `.planning/` | `prd-from-gsd.md` con GAPs marcados |
 | 1 | prd-quality-gate | `skills/prd-quality-guard/SKILL.md` | PRD (fichero/URL/paste) | Gate decision + score 3D + 3 recomendaciones |
 | 2 | research-design | `skills/research-from-prd/SKILL.md` | PRD | Guión de entrevistas + briefing moderador |
 | 3 | analyze-research | `skills/research-from-prd/SKILL.md` | Notas de entrevistas + PRD | JTBDs con evidencia + Research Gap Score |
@@ -70,7 +67,8 @@ Para cada paso del pipeline, usa la herramienta `Agent` con:
 | 5 | validate-stories | `skills/user-story-quality-coach/SKILL.md` | Stories del paso 4 | Reporte calidad + antipatrones |
 | 6 | split-stories | `skills/story-splitting/SKILL.md` | Stories validadas | Splits incrementales (3-5 por story) |
 | 7 | prioritize | `skills/story-prioritization/SKILL.md` | Stories validadas/divididas | Batches iterativos anti-waterfall |
-| C1 | build-story | `skills/user-story-builder/SKILL.md` | Idea / requisito | Story completa JTBD + scoring |
+| 8 | handoff | `skills/sdd-handoff/SKILL.md` | Stories + batches + JTBDs + PRD | `spec-input.md` para la herramienta SDD |
+| B1 | build-story | `skills/user-story-builder/SKILL.md` | Idea / requisito | Story completa JTBD + scoring |
 
 ---
 
@@ -123,18 +121,15 @@ Pasos:
 5. **validate-stories** — **Sub-agente fresco obligatorio** (feedback-flip). El sub-agente no recibe el contexto del paso 4, sólo las stories serializadas.
 6. **split-stories** — Saltar si Score Dim 6 ≥ 8 en todas las stories.
 7. **prioritize** — Devolver batches al usuario.
+8. **handoff** — Sub-agente empaqueta todo en `spec-input.md`. Mostrar al usuario antes de guardar.
 
-### Ruta B — GSD
-
-0. **from-gsd** — Sub-agente genera `prd-from-gsd.md`. Mostrar al usuario qué secciones quedaron como GAP y pedir que las complete antes de continuar.
-1-7. Igual que Ruta A, partiendo del PRD generado.
-
-### Ruta C — Sin documento
+### Ruta B — Sin documento
 
 1. **build-story** — Conversación guiada con el usuario. Este paso **no** se delega (es 100% interactivo). El orquestador carga directamente `skills/user-story-builder/SKILL.md`.
 2. **validate-stories** — Sub-agente fresco (feedback-flip).
 3. **split-stories** — Sub-agente.
 4. **prioritize** — Sub-agente.
+5. **handoff** — Sub-agente. Sin PRD ni JTBDs de research: esas secciones salen marcadas como pendientes.
 
 ---
 
@@ -146,9 +141,9 @@ Pasos:
 
 ## Output final
 
-Stories validadas, correctamente dimensionadas y **priorizadas en batches iterativos** listas para tu issue tracker o para pasar a tu ejecutor (Superpowers, Cursor agents, equipo).
+Un `spec-input.md` con stories validadas, dimensionadas y **priorizadas en batches iterativos**, con IDs estables y criterios Given / When / Then.
 
-**Bridge a ejecución (opcional):** Si usas GSD para planning + Superpowers para implementación, instala `bridge/gsd-bridge.py` para mantener `STATE.md` / `ROADMAP.md` / `PLAN.md` sincronizados con los commits. Ver `bridge/README.md`.
+Es la entrada para la fase de especificación de cualquier herramienta de Spec-Driven Development, o el contrato de la iteración para un equipo humano. El plugin termina aquí: el plan técnico y las tareas los genera la herramienta SDD.
 
 ---
 

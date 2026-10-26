@@ -13,6 +13,7 @@ description: |
   INTEGRACION: Se ejecuta DESPUES de /split-stories (o /validate-stories).
   Input: stories validadas con scoring 6 dimensiones.
   Output: backlog priorizado en batches iterativos con justificacion.
+  Siguiente: /handoff (spec-input.md para la herramienta SDD).
 version: 1.0.0
 ---
 

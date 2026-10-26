@@ -88,7 +88,7 @@ Sin dependencias falsas detectadas.
 - ✅ AW-2 (No infra-first): el batch 1 es backend pero entrega capacidad usable (testeable vía API), no infra puramente preparatoria.
 - ✅ AW-3 (No capas técnicas separadas): batch 2 mezcla deliberadamente lógica de ranking + UI para validar juntos.
 - ✅ AW-4 (No valor solo al final): batch 1 ya permite validar la hipótesis del algoritmo sin esperar al final.
-- ✅ AW-5 (No spike infinito): no hay spikes en este plan; el spike previo (validación técnica) ya se hizo y está en `Key Decisions` del PROJECT.md.
+- ✅ AW-5 (No spike infinito): no hay spikes en este plan; el spike previo (validación técnica) ya se hizo y está en §2.1 del PRD.
 
 ---
 

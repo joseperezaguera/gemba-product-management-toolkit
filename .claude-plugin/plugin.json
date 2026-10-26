@@ -1,7 +1,7 @@
 {
   "name": "gemba-user-story-toolkit",
-  "version": "1.1.0",
-  "description": "Pipeline PRD/GSD → JTBDs → User Stories validadas y priorizadas. 8 skills + 11 comandos. Source-agnostic (acepta PRD pegado, fichero o URL — sin acoplamiento a Notion/Jira). Incluye `/from-gsd` para integrar artefactos de Get Shit Done y `bridge/gsd-bridge.py` para mantener consistencia entre planning y ejecución.",
+  "version": "2.0.0",
+  "description": "Pipeline PRD → JTBDs → User Stories validadas y priorizadas → spec-input.md para cualquier herramienta de Spec-Driven Development. 8 skills + 11 comandos. Source-agnostic (acepta PRD pegado, fichero o URL) y sin acoplamiento a Notion/Jira ni a ninguna herramienta de SDD.",
   "author": {
     "name": "José Ramón Pérez Agüera",
     "url": "https://www.gemba.es"
