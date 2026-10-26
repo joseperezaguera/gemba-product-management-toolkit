@@ -6,7 +6,7 @@
   },
   "plugins": [
     {
-      "name": "gemba-user-story-toolkit",
+      "name": "gemba-product-management-toolkit",
       "source": "./",
       "description": "Pipeline PRD → JTBDs → User Stories validadas y priorizadas → spec-input.md para Spec-Driven Development."
     }

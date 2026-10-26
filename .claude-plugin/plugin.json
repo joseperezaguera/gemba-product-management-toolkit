@@ -1,11 +1,11 @@
 {
-  "name": "gemba-user-story-toolkit",
-  "version": "2.0.0",
+  "name": "gemba-product-management-toolkit",
+  "version": "3.0.0",
   "description": "Pipeline PRD → JTBDs → User Stories validadas y priorizadas → spec-input.md para cualquier herramienta de Spec-Driven Development. 8 skills + 11 comandos. Source-agnostic (acepta PRD pegado, fichero o URL) y sin acoplamiento a Notion/Jira ni a ninguna herramienta de SDD.",
   "author": {
     "name": "José Ramón Pérez Agüera",
     "url": "https://www.gemba.es"
   },
   "license": "MIT",
-  "homepage": "https://github.com/joseperezaguera/gemba-user-story-toolkit"
+  "homepage": "https://github.com/joseperezaguera/gemba-product-management-toolkit"
 }
