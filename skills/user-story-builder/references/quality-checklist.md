@@ -32,8 +32,8 @@
 
 | Score | Criterio | Ejemplo |
 |-------|----------|---------|
-| 9-10 | 4/4 Wendel + usuario diferenciado | "Jefe recurrente que compra ~40 productos fijos" |
-| 7-8 | 3/4 Wendel + segmento específico | "Jefe cazador de ofertas" |
+| 9-10 | 4/4 Wendel + usuario diferenciado | "Cliente recurrente que compra ~40 productos fijos" |
+| 7-8 | 3/4 Wendel + segmento específico | "Cliente cazador de ofertas" |
 | 5-6 | Algo de especificidad | "Usuario experimentado" |
 | 3-4 | Rol genérico con contexto mínimo | "Usuario de la app" |
 | 0-2 | Completamente genérico | "As a user" |
@@ -83,7 +83,7 @@
 ## Antipatrones a Detectar
 
 ### 1. "As a user..." (Usuario Genérico)
-**Señal:** "Como usuario", "Como cliente", "Como jefe" sin especificar
+**Señal:** "Como usuario", "Como cliente", "Como comprador" sin especificar
 **Impacto:** User Specificity ≤4
 **Corrección:** Aplicar Wendel Checklist
 

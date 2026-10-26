@@ -14,7 +14,7 @@
 
 > "Cuando no encuentro lo que quiero rápido, me voy y compro otra cosa"
 
-> "El truco que tengo es: pongo la marca primero y luego el producto, así sale más concreto. Por ejemplo, 'Hacendado leche desnatada' en lugar de 'leche desnatada'"
+> "El truco que tengo es: pongo la marca primero y luego el producto, así sale más concreto. Por ejemplo, 'Lácteos Norte leche desnatada' en lugar de 'leche desnatada'"
 
 > "En el ordenador tengo más paciencia, pero en el móvil quiero que sea rápido — si no, dejo la app abierta y vuelvo más tarde"
 

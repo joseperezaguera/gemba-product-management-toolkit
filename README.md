@@ -45,12 +45,12 @@ Cubre el "antes" del código. Para el "durante" del código (implementación), s
 
 ```bash
 # Clonar
-git clone https://github.com/joseperezaguera/mercadona-user-story-toolkit ~/.claude/plugins/mercadona-user-story-toolkit
+git clone https://github.com/joseperezaguera/gemba-user-story-toolkit ~/.claude/plugins/gemba-user-story-toolkit
 
 # Activar en ~/.claude/settings.json
 {
   "enabledPlugins": {
-    "mercadona-user-story-toolkit": true
+    "gemba-user-story-toolkit": true
   }
 }
 ```
@@ -107,7 +107,7 @@ chmod +x /usr/local/bin/gsd-bridge
 
 ## Ejemplo end-to-end
 
-Ver [`examples/searchmo-facets/`](examples/searchmo-facets/): walkthrough completo del feature "filtro por facetas en búsqueda" implementado con GSD → toolkit → Superpowers.
+Ver [`examples/search-facets/`](examples/search-facets/): walkthrough completo del feature "filtro por facetas en búsqueda" implementado con GSD → toolkit → Superpowers.
 
 ---
 
@@ -117,7 +117,7 @@ Ver [`examples/searchmo-facets/`](examples/searchmo-facets/): walkthrough comple
 
 Las skills NO inventan datos. Si falta información, te lo dicen y te preguntan. Si tu PRD no tiene métricas, no fabricarán números — el placeholder `[⚠️ Pendiente: definir con PM/Data]` aparece y te recomienda qué tipo de métrica sería útil.
 
-Esto es deliberado. La razón está en [el primer artículo de la serie](https://www.gemba.es/p/el-ai-mercadona-user-story-framework): si la skill rellena por ti, dejas de pensar — y las stories sin pensamiento no soportan ejecución.
+Esto es deliberado. La razón: si la skill rellena por ti, dejas de pensar — y las stories sin pensamiento no soportan ejecución.
 
 ---
 
@@ -150,6 +150,6 @@ MIT — ver [LICENSE](LICENSE).
 
 ## Créditos
 
-Diseñado y mantenido por [José Ramón Pérez Agüera](https://www.linkedin.com/in/joseaguera/), CPTO en [Mercadona Tech](https://www.mercadona.es). Forjado en producción durante 2025-2026; generalizado y open-sourced en mayo 2026.
+Diseñado y mantenido por [José Ramón Pérez Agüera](https://www.linkedin.com/in/joseaguera/). Forjado en producción durante 2025-2026; generalizado y open-sourced en mayo 2026.
 
 Inspiración: [Mom Test](http://momtestbook.com/) (Rob Fitzpatrick), [INVEST](https://en.wikipedia.org/wiki/INVEST_(mnemonic)), [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) (Christensen et al.), [Get Shit Done](https://github.com/...), [Superpowers](https://github.com/...).

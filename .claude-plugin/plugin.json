@@ -1,11 +1,11 @@
 {
-  "name": "mercadona-user-story-toolkit",
-  "version": "0.1.0",
+  "name": "gemba-user-story-toolkit",
+  "version": "1.0.0",
   "description": "Pipeline PRD/GSD → JTBDs → User Stories validadas y priorizadas. 7 skills + 11 comandos. Source-agnostic (acepta PRD pegado, fichero o URL — sin acoplamiento a Notion/Jira). Incluye `/from-gsd` para integrar artefactos de Get Shit Done y `bridge/gsd-bridge.py` para mantener consistencia entre planning y ejecución.",
   "author": {
-    "name": "José Ramón Pérez Agüera (Mercadona Tech)",
+    "name": "José Ramón Pérez Agüera",
     "url": "https://www.gemba.es"
   },
   "license": "MIT",
-  "homepage": "https://github.com/joseperezaguera/mercadona-user-story-toolkit"
+  "homepage": "https://github.com/joseperezaguera/gemba-user-story-toolkit"
 }

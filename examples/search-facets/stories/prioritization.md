@@ -1,4 +1,4 @@
-# Priorización de Stories — SearchMO Faceted Search
+# Priorización de Stories — ShopSearch Faceted Search
 
 **Generado por:** `/prioritize`
 **Input:** 5 stories validadas (de `stories-validated.md`)

@@ -1,8 +1,8 @@
-# SearchMO — Faceted Search
+# ShopSearch — Faceted Search
 
 ## What This Is
 
-Extensión del buscador de la app de e-commerce SearchMO para soportar **facetas inline**: cuando una consulta es ambigua (ej: "café"), la respuesta del buscador incluye filtros sugeridos (tipo, intensidad, formato, etc.) que el cliente puede aplicar con un tap, sin tener que escribir queries más largas o navegar por categorías.
+Extensión del buscador de la app de e-commerce ShopSearch para soportar **facetas inline**: cuando una consulta es ambigua (ej: "café"), la respuesta del buscador incluye filtros sugeridos (tipo, intensidad, formato, etc.) que el cliente puede aplicar con un tap, sin tener que escribir queries más largas o navegar por categorías.
 
 ## Core Value
 
@@ -31,7 +31,7 @@ Reducir la fricción de la búsqueda ambigua para clientes recurrentes, aumentan
 
 ## Context
 
-SearchMO es el buscador propio de la app, en producción desde Q1 2026 reemplazando una solución de terceros. Los logs muestran que el ~12% de queries son ambiguas (multiples categorías de producto en los top-10 resultados con dispersión similar). Las queries ambiguas tienen una tasa de "search abandon" un 1.8x superior a las queries específicas.
+ShopSearch es el buscador propio de la app, en producción desde Q1 2026 reemplazando una solución de terceros. Los logs muestran que el ~12% de queries son ambiguas (multiples categorías de producto en los top-10 resultados con dispersión similar). Las queries ambiguas tienen una tasa de "search abandon" un 1.8x superior a las queries específicas.
 
 El equipo del buscador ha completado la fase 1 (búsqueda exacta + tolerancia a typos). Esta es la fase 2 del roadmap del buscador.
 
@@ -40,7 +40,7 @@ El equipo del buscador ha completado la fase 1 (búsqueda exacta + tolerancia a 
 - **Performance:** la generación de facetas no puede añadir más de 50ms p99 a la latencia del search response
 - **Mobile-first:** la UI debe funcionar bien en pantalla pequeña; las facetas no pueden empujar los resultados fuera del viewport inicial
 - **Sin acoplamiento al ranker:** las facetas se calculan post-ranker, no afectan el orden de los resultados base
-- **Tech stack:** consistente con resto de SearchMO (search service en backend + componente React en mobile/web)
+- **Tech stack:** consistente con resto de ShopSearch (search service en backend + componente React en mobile/web)
 
 ## Key Decisions
 

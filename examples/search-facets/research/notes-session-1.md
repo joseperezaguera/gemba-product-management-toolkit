@@ -22,7 +22,7 @@
 
 > "Cuando busco 'café' me sale de todo y no sé cuál pillar"
 
-> "Acabo escribiendo 'café Hacendado molido' aunque tarde más, porque sale más limpio"
+> "Acabo escribiendo 'café marca blanca molido' aunque tarde más, porque sale más limpio"
 
 > "Si lo tengo claro lo escribo entero, si no lo tengo claro voy a categorías"
 

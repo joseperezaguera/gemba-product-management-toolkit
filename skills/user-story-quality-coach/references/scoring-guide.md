@@ -24,11 +24,11 @@
 
 | Score | Criterio | Ejemplo |
 |-------|----------|---------|
-| 9-10 | Responde 4/4 preguntas Wendel. Usuario específico y diferenciado. | "Jefe recurrente que compra 1-2x/semana los mismos ~40 productos" |
-| 7-8 | Segmento específico. Responde 3/4 preguntas. | "Jefe que busca descuentos en SPBs" |
+| 9-10 | Responde 4/4 preguntas Wendel. Usuario específico y diferenciado. | "Cliente recurrente que compra 1-2x/semana los mismos ~40 productos" |
+| 7-8 | Segmento específico. Responde 3/4 preguntas. | "Cliente que busca descuentos en productos en promoción" |
 | 5-6 | Algo de especificidad pero genérico. | "Usuario experimentado" |
 | 3-4 | Rol genérico con contexto mínimo. | "Usuario de la app" |
-| 0-2 | Completamente genérico. | "As a user" o "As a jefe" |
+| 0-2 | Completamente genérico. | "As a user" o "As a customer" |
 
 ---
 

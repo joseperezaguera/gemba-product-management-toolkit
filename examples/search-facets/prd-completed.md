@@ -1,4 +1,4 @@
-# PRD — SearchMO Faceted Search (completado)
+# PRD — ShopSearch Faceted Search (completado)
 
 **Origen:** `prd-from-gsd.md` (generado por `/from-gsd`) + GAPs completados manualmente por el PM tras revisión inicial.
 **Fecha:** 2026-04-30
@@ -8,15 +8,15 @@
 
 ## 1.1 Problema
 
-Extensión del buscador SearchMO para soportar facetas inline: cuando una consulta es ambigua (ej: "café"), la respuesta del buscador incluye filtros sugeridos (tipo, intensidad, formato, etc.) que el cliente puede aplicar con un tap, sin tener que escribir queries más largas o navegar por categorías.
+Extensión del buscador ShopSearch para soportar facetas inline: cuando una consulta es ambigua (ej: "café"), la respuesta del buscador incluye filtros sugeridos (tipo, intensidad, formato, etc.) que el cliente puede aplicar con un tap, sin tener que escribir queries más largas o navegar por categorías.
 
 **Quién sufre el problema:** clientes recurrentes de la app, especialmente perfiles que buscan productos por categoría conceptual ("café", "yogur", "pan") en lugar de por marca/formato específico.
 
-**Desde cuándo:** desde el lanzamiento de SearchMO (Q1 2026), aunque el problema existía antes con el buscador anterior — solo no se medía.
+**Desde cuándo:** desde el lanzamiento de ShopSearch (Q1 2026), aunque el problema existía antes con el buscador anterior — solo no se medía.
 
 **Impacto cuantificado:** ver §1.2 Farolas.
 
-**Por qué AHORA:** el equipo de SearchMO completó Phase 1 (búsqueda exacta + tolerancia a typos) y la fase 2 del roadmap del buscador es exactamente esta mejora.
+**Por qué AHORA:** el equipo de ShopSearch completó Phase 1 (búsqueda exacta + tolerancia a typos) y la fase 2 del roadmap del buscador es exactamente esta mejora.
 
 ## 1.2 Farolas (Evidencia Cuantitativa)
 
@@ -32,7 +32,7 @@ Extensión del buscador SearchMO para soportar facetas inline: cuando una consul
 | Penumbra | Fuente | Contexto |
 |----------|--------|----------|
 | "Cuando busco 'café' me sale de todo y no sé cuál pillar" | Cliente recurrente, sesión de discovery | Entrevista 2026-04-22, casa del cliente |
-| "Acabo escribiendo 'café Hacendado molido' aunque tarde más, porque sale más limpio" | Cliente recurrente | Observación de campo, 2026-04-22 |
+| "Acabo escribiendo 'café marca blanca molido' aunque tarde más, porque sale más limpio" | Cliente recurrente | Observación de campo, 2026-04-22 |
 | "Si pudiera filtrar por tipo de café como en otras apps, sería más rápido" | Cliente recurrente | Entrevista 2026-04-23 |
 | "Cuando no encuentro lo que quiero rápido, me voy y compro otra cosa" | Cliente recurrente | Entrevista 2026-04-23 |
 | "Tengo un truco: pongo la marca primero y luego el producto, así sale más concreto" | Cliente experimentado | Observación de campo, 2026-04-24 — workaround claro |
@@ -53,7 +53,7 @@ Acción inmediata: ejecutar `/prd-quality-guard prd-completed.md` para validar e
 
 **Hipótesis principal:**
 
-> Creemos que ofrecer **facetas inline auto-generadas** para queries ambiguas en SearchMO resultará en una **reducción del 30% en search abandons** y un **aumento del 8% en conversión a "añadir al carrito"** para queries ambiguas, porque las farolas muestran que el 28% de queries ambiguas se abandonan (vs 16% en específicas) y los clientes ya hacen workarounds (escribir queries más largas) para evitar el problema.
+> Creemos que ofrecer **facetas inline auto-generadas** para queries ambiguas en ShopSearch resultará en una **reducción del 30% en search abandons** y un **aumento del 8% en conversión a "añadir al carrito"** para queries ambiguas, porque las farolas muestran que el 28% de queries ambiguas se abandonan (vs 16% en específicas) y los clientes ya hacen workarounds (escribir queries más largas) para evitar el problema.
 
 **Justificación:** ver §1.2 Farolas + §1.3 Penumbras + spike previo del equipo (Abril 2026) que validó la viabilidad técnica de generación algorítmica.
 
@@ -98,7 +98,7 @@ Acción inmediata: ejecutar `/prd-quality-guard prd-completed.md` para validar e
 
 ## 2.4 Dimensionamiento
 
-**Usuarios afectados:** ~12% de queries del buscador → orden de magnitud de cientos de miles de queries/día (depende del volumen total de SearchMO; cifra exacta no revelable).
+**Usuarios afectados:** ~12% de queries del buscador → orden de magnitud de cientos de miles de queries/día (depende del volumen total de ShopSearch; cifra exacta no revelable).
 
 **Volumen de operaciones:** la generación de facetas se ejecuta solo en queries ambiguas. La carga adicional sobre el search service es marginal (cálculos en memoria sobre los top-K results ya generados).
 
