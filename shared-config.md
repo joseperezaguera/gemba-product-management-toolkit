@@ -211,4 +211,4 @@ Cada equipo configura su integración con la herramienta de documentos por fuera
 
 ---
 
-*Plugin v0.1.0 — MIT License — https://github.com/joseperezaguera/gemba-user-story-toolkit*
+*Plugin v1.0.0 — MIT License — https://github.com/joseperezaguera/gemba-user-story-toolkit*

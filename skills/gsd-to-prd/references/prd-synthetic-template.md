@@ -235,6 +235,6 @@ Este es el formato exacto del fichero `prd-from-gsd.md` que el comando produce.
 
 ---
 
-*PRD generado el [date] por `/from-gsd` v0.1.0 (Gemba User Story Toolkit)*
+*PRD generado el [date] por `/from-gsd` v1.0.0 (Gemba User Story Toolkit)*
 *Fichero fuente: `.planning/` ([path])*
 ```
