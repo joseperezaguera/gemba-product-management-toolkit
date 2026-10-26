@@ -44,16 +44,11 @@ Cubre el "antes" del código. Para el "durante" del código (implementación), s
 ### Como plugin de Claude Code (recomendado)
 
 ```bash
-# Clonar
-git clone https://github.com/joseperezaguera/gemba-user-story-toolkit ~/.claude/plugins/gemba-user-story-toolkit
-
-# Activar en ~/.claude/settings.json
-{
-  "enabledPlugins": {
-    "gemba-user-story-toolkit": true
-  }
-}
+claude plugin marketplace add joseperezaguera/gemba-user-story-toolkit
+claude plugin install gemba-user-story-toolkit@gemba
 ```
+
+O desde una sesión de Claude Code: `/plugin marketplace add joseperezaguera/gemba-user-story-toolkit` y `/plugin install gemba-user-story-toolkit@gemba`.
 
 ### Bridge GSD↔Superpowers (opcional)
 
