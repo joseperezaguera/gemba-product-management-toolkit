@@ -113,7 +113,7 @@ la solución propuesta no ataca el struggle real, documentar y recomendar pivot.
 | Alternativa descartada | Por qué explorar en entrevista |
 |---|---|
 | "Alertas Slack" → Descartada por "demasiada notificación" | ¿Los usuarios confirman notif. fatigue? ¿O es asunción? |
-| "Migrar a MOT" → Descartada por "complejidad técnica" | ¿Los usuarios conocen MOT? ¿Lo usarían? |
+| "Migrar a la herramienta corporativa" → Descartada por "complejidad técnica" | ¿Los usuarios conocen esa herramienta? ¿Lo usarían? |
 
 ---
 

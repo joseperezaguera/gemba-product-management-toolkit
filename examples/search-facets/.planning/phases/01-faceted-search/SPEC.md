@@ -10,7 +10,7 @@ El endpoint `/search` extiende su respuesta con un campo `facets` que, para quer
 
 ## Background
 
-SearchMO opera hoy en producción con búsqueda exacta + tolerancia a typos (Phase 1 del roadmap del buscador, ya desplegado). Los logs de search service muestran:
+ShopSearch opera hoy en producción con búsqueda exacta + tolerancia a typos (Phase 1 del roadmap del buscador, ya desplegado). Los logs de search service muestran:
 
 - ~12% de queries son ambiguas (top-20 results con ≥3 categorías de peso ≥10%)
 - Las queries ambiguas tienen 1.8x más "search abandons" (cliente sale del buscador sin tap en resultado)

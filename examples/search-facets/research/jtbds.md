@@ -1,4 +1,4 @@
-# JTBDs Sintetizados — SearchMO Faceted Search
+# JTBDs Sintetizados — ShopSearch Faceted Search
 
 **Generado por:** `/analyze-research`
 **Input:** notes-session-1.md, notes-session-2.md (+3 sesiones adicionales no incluidas en este walkthrough por brevedad)
@@ -32,7 +32,7 @@
 
 **Evidencia cualitativa (Penumbras):**
 - "Cuando busco 'café' me sale de todo y no sé cuál pillar" — sesión 1
-- "Acabo escribiendo 'café Hacendado molido' aunque tarde más" — sesión 1
+- "Acabo escribiendo 'café marca blanca molido' aunque tarde más" — sesión 1
 - "Si pudiera filtrar por tipo de café como en otras apps, sería más rápido" — sesión 2
 
 **Confianza en el JTBD:** Alta (5/5 entrevistas mencionaron alguna versión del struggle, 4/5 verbalizaron preferencia por solución tipo chip/filtro inline)

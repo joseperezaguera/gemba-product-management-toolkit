@@ -1,8 +1,8 @@
-# Walkthrough: Búsqueda con Facetas en SearchMO
+# Walkthrough: Búsqueda con Facetas en ShopSearch
 
-Ejemplo end-to-end del pipeline **GSD → Mercadona User Story Toolkit → Superpowers** aplicado a una feature realista: añadir facetas inline en el buscador para que un cliente recurrente pueda desambiguar consultas comunes (ej: "café" → molido / grano / soluble / descafeinado).
+Ejemplo end-to-end del pipeline **GSD → Gemba User Story Toolkit → Superpowers** aplicado a una feature realista: añadir facetas inline en el buscador para que un cliente recurrente pueda desambiguar consultas comunes (ej: "café" → molido / grano / soluble / descafeinado).
 
-**Por qué este ejemplo.** Continúa el caso del [artículo del buscador](https://www.gemba.es/p/como-construimos-nuestro-buscador-en-mercadona-tech). Ya tenemos el buscador en producción; ahora añadimos una mejora identificada por el equipo: el ~12% de queries son ambiguas, y la hipótesis es que un filtro de facetas inline reduce la fricción y mejora la conversión a "añadir al carrito".
+**Por qué este ejemplo.** Ya tenemos el buscador en producción; ahora añadimos una mejora identificada por el equipo: el ~12% de queries son ambiguas, y la hipótesis es que un filtro de facetas inline reduce la fricción y mejora la conversión a "añadir al carrito".
 
 > Este es un ejemplo **ilustrativo**: los artefactos son realistas pero los datos cuantitativos (farolas, métricas) son sintéticos. El feature concreto sí puede implementarse así.
 
@@ -63,6 +63,6 @@ Fase 1 (PM): GSD                            Fase 2 (PM): MUST                   
 
 ## Importante
 
-- **Los datos cuantitativos son sintéticos.** Los porcentajes (12% queries ambiguas, etc.) son ilustrativos, no datos reales de SearchMO.
+- **Los datos cuantitativos son sintéticos.** Los porcentajes (12% queries ambiguas, etc.) son ilustrativos, no datos reales de ShopSearch.
 - **El feature es realista.** Las facetas en búsqueda son una funcionalidad estándar de e-commerce; este ejemplo enseña *el flujo*, no inventa una feature inverosímil.
 - **No incluye implementación real del feature.** El walkthrough cubre artefactos hasta `/superpowers:writing-plans`. La ejecución TDD (`/superpowers:subagent-driven-development`) se ilustra con ejemplos de tests pero no produce código real.

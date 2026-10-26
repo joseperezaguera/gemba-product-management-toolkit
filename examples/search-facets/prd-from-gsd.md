@@ -1,7 +1,7 @@
-# PRD sintético — SearchMO Faceted Search
+# PRD sintético — ShopSearch Faceted Search
 
-**Generado por:** `/from-gsd` (Mercadona User Story Toolkit v0.1)
-**Origen:** `examples/searchmo-facets/.planning/`
+**Generado por:** `/from-gsd` (Gemba User Story Toolkit v0.1)
+**Origen:** `examples/search-facets/.planning/`
 **Fecha de generación:** 2026-04-29 14:30
 **Última fase ejecutada (de STATE.md):** ninguna (proyecto recién inicializado)
 **Estado:** Borrador sintético — completar GAPs antes de `/prd-quality-guard`
@@ -10,11 +10,11 @@
 
 ## 1.1 Problema
 
-Extensión del buscador SearchMO para soportar facetas inline: cuando una consulta es ambigua (ej: "café"), la respuesta del buscador incluye filtros sugeridos (tipo, intensidad, formato, etc.) que el cliente puede aplicar con un tap, sin tener que escribir queries más largas o navegar por categorías.
+Extensión del buscador ShopSearch para soportar facetas inline: cuando una consulta es ambigua (ej: "café"), la respuesta del buscador incluye filtros sugeridos (tipo, intensidad, formato, etc.) que el cliente puede aplicar con un tap, sin tener que escribir queries más largas o navegar por categorías.
 
 Reducir la fricción de la búsqueda ambigua para clientes recurrentes, aumentando la conversión a "añadir al carrito" y reduciendo búsquedas abandonadas.
 
-SearchMO es el buscador propio de la app, en producción desde Q1 2026 reemplazando una solución de terceros. Los logs muestran que el ~12% de queries son ambiguas (multiples categorías de producto en los top-10 resultados con dispersión similar). Las queries ambiguas tienen una tasa de "search abandon" un 1.8x superior a las queries específicas.
+ShopSearch es el buscador propio de la app, en producción desde Q1 2026 reemplazando una solución de terceros. Los logs muestran que el ~12% de queries son ambiguas (multiples categorías de producto en los top-10 resultados con dispersión similar). Las queries ambiguas tienen una tasa de "search abandon" un 1.8x superior a las queries específicas.
 
 > Origen: PROJECT.md §What This Is + §Core Value + §Context
 
@@ -57,11 +57,11 @@ Acción inmediata según STATE.md: ejecutar `/gsd-spec-phase 1` para detallar Ph
 
 **Hipótesis principal:**
 
-> Creemos que ofrecer facetas inline auto-generadas para queries ambiguas en SearchMO resultará en una reducción del 30% en search abandons y un aumento del 8% en conversión a "añadir al carrito" para queries ambiguas.
+> Creemos que ofrecer facetas inline auto-generadas para queries ambiguas en ShopSearch resultará en una reducción del 30% en search abandons y un aumento del 8% en conversión a "añadir al carrito" para queries ambiguas.
 
 **Justificación:**
 
-SearchMO opera hoy en producción con búsqueda exacta + tolerancia a typos. Los logs muestran que el ~12% de queries son ambiguas (top-20 results con ≥3 categorías de peso ≥10%) y tienen 1.8x más "search abandons" que queries específicas. El catálogo tiene atributos estructurados por producto (categoría, marca, formato, tipo, intensidad) — disponibles en product service. La hipótesis es que ofrecer estos atributos como filtros inline reduce la fricción de desambiguación sin requerir que el cliente escriba queries más largas.
+ShopSearch opera hoy en producción con búsqueda exacta + tolerancia a typos. Los logs muestran que el ~12% de queries son ambiguas (top-20 results con ≥3 categorías de peso ≥10%) y tienen 1.8x más "search abandons" que queries específicas. El catálogo tiene atributos estructurados por producto (categoría, marca, formato, tipo, intensidad) — disponibles en product service. La hipótesis es que ofrecer estos atributos como filtros inline reduce la fricción de desambiguación sin requerir que el cliente escriba queries más largas.
 
 **Alternativas consideradas (de PROJECT.md §Key Decisions):**
 
@@ -233,5 +233,5 @@ SearchMO opera hoy en producción con búsqueda exacta + tolerancia a typos. Los
 
 ---
 
-*PRD generado el 2026-04-29 por `/from-gsd` v0.1.0 (Mercadona User Story Toolkit)*
-*Fichero fuente: `examples/searchmo-facets/.planning/`*
+*PRD generado el 2026-04-29 por `/from-gsd` v0.1.0 (Gemba User Story Toolkit)*
+*Fichero fuente: `examples/search-facets/.planning/`*

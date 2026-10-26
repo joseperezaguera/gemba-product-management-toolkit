@@ -61,7 +61,7 @@
 
 ### 🔄 CAMBIO DE COMPORTAMIENTO
 
-**AHORA:** El Jefe ve "Novedades" mezcladas con recuperados y campañas → desconfianza, scroll largo, abandono de sección.
+**AHORA:** El cliente ve "Novedades" mezcladas con recuperados y campañas → desconfianza, scroll largo, abandono de sección.
 
 **NUEVO:**
 - **START:** Confiar en que cada ítem de Novedades es realmente nuevo
@@ -83,7 +83,7 @@
 **Cuando** el backend evalúa su elegibilidad
 **Entonces** se excluye si is_recovered=true O is_campaign=true
 
-**Dado** que el Jefe accede a la sección Novedades
+**Dado** que el cliente accede a la sección Novedades
 **Cuando** se renderizan los productos
 **Entonces** ninguno debe tener tags de recuperado ni campaña
 
@@ -194,7 +194,7 @@ para poder filtrar los resultados.
 ### ✅ User Story Reescrita (JTBD)
 
 ```
-Como Jefe cazador de ofertas que compra 1-2x/mes buscando los
+Como Cliente cazador de ofertas que compra 1-2x/mes buscando los
 mejores precios,
 
 Cuando busco un producto específico y obtengo +50 resultados

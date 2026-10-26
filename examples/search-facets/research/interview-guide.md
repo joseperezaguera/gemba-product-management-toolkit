@@ -1,4 +1,4 @@
-# Guión de Entrevista — SearchMO Faceted Search
+# Guión de Entrevista — ShopSearch Faceted Search
 
 **Generado por:** `/research source_type=PRD`
 **Modo:** Validar (hay hipótesis y evidencia inicial; queremos confirmar JTBDs)

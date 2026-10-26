@@ -202,7 +202,7 @@ y sentirme organizado y en control de la alimentación de mi familia.
 
 ### 5. No Capturar el Contexto
 ❌ "Cuando un usuario quiere comprar..."
-✅ "Cuando un jefe recurrente abre la app durante su pausa del trabajo para hacer la compra semanal..."
+✅ "Cuando un cliente recurrente abre la app durante su pausa del trabajo para hacer la compra semanal..."
 
 ---
 

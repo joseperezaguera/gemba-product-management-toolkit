@@ -1,4 +1,4 @@
-# Requirements: SearchMO Faceted Search
+# Requirements: ShopSearch Faceted Search
 
 **Defined:** 2026-04-28
 **Core Value:** Reducir fricción en búsquedas ambiguas mediante facetas inline auto-generadas

@@ -24,7 +24,7 @@ de producto: cada sección produce contenido testeable, no narrativa.
 - [ ] Por qué es importante resolverlo AHORA
 
 **Ejemplo bueno:**
-> Los pickers del almacén central de Valencia tardan una media de 45 minutos por pedido urgente
+> Los pickers del almacén central tardan una media de 45 minutos por pedido urgente
 > (vs 30 min objetivo), con un 8% de tasa de error en selección de producto. Esto genera
 > +15% de horas extra y un NPS de -12 puntos en pedidos urgentes. El problema se ha agravado
 > desde la apertura del turno de tarde en octubre 2025.
@@ -70,7 +70,7 @@ de producto: cada sección produce contenido testeable, no narrativa.
 ```
 | Penumbra | Fuente | Contexto |
 |----------|--------|----------|
-| "Cuando llega un pico, me siento apagando fuegos" | Picker senior, Valencia | Observación turno tarde, 15-Ene |
+| "Cuando llega un pico, me siento apagando fuegos" | Picker senior, almacén central | Observación turno tarde, 15-Ene |
 | "Consulto 3 pantallas distintas para saber qué hacer" | Coordinador, Madrid | Entrevista 1on1, 20-Ene |
 ```
 

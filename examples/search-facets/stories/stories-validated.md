@@ -1,4 +1,4 @@
-# User Stories Validadas — SearchMO Faceted Search
+# User Stories Validadas — ShopSearch Faceted Search
 
 **Generado por:** `/stories` → `/validate-stories`
 **Input:** `research/jtbds.md` (JTBD-01 + JTBD-02)

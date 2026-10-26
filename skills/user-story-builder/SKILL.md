@@ -129,7 +129,7 @@ Usuario: "Completar su compra semanal sin perder tiempo"
 **Red flags - Usuario demasiado genérico:**
 - ❌ "Como usuario..."
 - ❌ "Como cliente..."
-- ❌ "Como jefe..." (sin especificar tipo)
+- ❌ "Como cliente..." (sin especificar tipo)
 
 **Ayudar a especificar:**
 > "¿Es un usuario nuevo o recurrente? ¿Compra mucho o poco? ¿Qué le caracteriza respecto a otros usuarios?"

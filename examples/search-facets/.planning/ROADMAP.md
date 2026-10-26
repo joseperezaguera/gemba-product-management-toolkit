@@ -1,4 +1,4 @@
-# Roadmap: SearchMO Faceted Search
+# Roadmap: ShopSearch Faceted Search
 
 ## Overview
 
@@ -18,7 +18,7 @@
 **Requirements**: DETECT-01, DETECT-02, DETECT-03, FACET-01, FACET-02, FACET-03, FACET-04
 **Success Criteria** (what must be TRUE):
   1. Para una query ambigua de prueba, el endpoint `/search?q=café` devuelve un campo `facets` con 3-5 entradas
-  2. Para una query específica de prueba (`q=Café+Molido+Hacendado+250g`), el campo `facets` está vacío o ausente
+  2. Para una query específica de prueba (`q=Café+Molido+Natural+250g`), el campo `facets` está vacío o ausente
   3. El threshold de ambigüedad se modifica vía feature flag sin redeploy
   4. La latencia p99 del endpoint sigue ≤200ms con facetas activas
 **Plans**: 1 plan

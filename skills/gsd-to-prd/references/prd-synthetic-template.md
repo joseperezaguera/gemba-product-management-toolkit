@@ -9,7 +9,7 @@ Este es el formato exacto del fichero `prd-from-gsd.md` que el comando produce.
 ```markdown
 # PRD sintético — [Project Name]
 
-**Generado por:** `/from-gsd` (Mercadona User Story Toolkit)
+**Generado por:** `/from-gsd` (Gemba User Story Toolkit)
 **Origen:** `.planning/` ([ruta absoluta])
 **Fecha de generación:** [YYYY-MM-DD HH:MM]
 **Última fase ejecutada (de STATE.md):** [phase number / "no STATE.md"]
@@ -235,6 +235,6 @@ Este es el formato exacto del fichero `prd-from-gsd.md` que el comando produce.
 
 ---
 
-*PRD generado el [date] por `/from-gsd` v0.1.0 (Mercadona User Story Toolkit)*
+*PRD generado el [date] por `/from-gsd` v1.0.0 (Gemba User Story Toolkit)*
 *Fichero fuente: `.planning/` ([path])*
 ```

@@ -1,4 +1,4 @@
-# Configuración Compartida — Mercadona User Story Toolkit (OSS)
+# Configuración Compartida — Gemba User Story Toolkit (OSS)
 
 Documento de referencia compartido por todas las skills del toolkit.
 
@@ -211,4 +211,4 @@ Cada equipo configura su integración con la herramienta de documentos por fuera
 
 ---
 
-*Plugin v0.1.0 — MIT License — https://github.com/joseperezaguera/mercadona-user-story-toolkit*
+*Plugin v1.0.0 — MIT License — https://github.com/joseperezaguera/gemba-user-story-toolkit*
