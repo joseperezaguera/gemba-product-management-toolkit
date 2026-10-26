@@ -2,8 +2,6 @@
 
 Pipeline de **definición de producto** para Claude Code: convierte un PRD (o un proyecto GSD) en user stories validadas y priorizadas, listas para que tu equipo de ingeniería las implemente.
 
-> Forjado en producción en [Mercadona Tech](https://www.mercadona.es), generalizado para cualquier equipo. Parte de la serie [Gemba](https://www.gemba.es) sobre desarrollo de productos con agentes.
-
 ---
 
 ## ¿Qué hace?
