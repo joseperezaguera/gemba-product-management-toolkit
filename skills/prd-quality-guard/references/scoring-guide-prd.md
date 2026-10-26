@@ -131,7 +131,7 @@ Evalúa si el Discovery fue riguroso, si se exploraron alternativas, y si el sco
 > Discovery: "Realizamos 5 entrevistas con pickers + 2 sesiones de observación.
 > Hallazgos: (1) 60% del tiempo extra es decidir prioridad, (2) pickers usan
 > Post-its como workaround, (3) coordinadores duplican info en 3 herramientas."
-> Explore: "Evaluamos 3 opciones: (A) Dashboard custom, (B) Integrar en MOT,
+> Explore: "Evaluamos 3 opciones: (A) Dashboard custom, (B) Integrar en la herramienta corporativa,
 > (C) Alertas Slack. Criterios: coste, adopción, mantenimiento. Elegimos B por..."
 > - Metodología clara, hallazgos concretos, alternativas con criterios
 

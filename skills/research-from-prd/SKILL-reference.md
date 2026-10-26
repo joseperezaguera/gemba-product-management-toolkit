@@ -37,10 +37,10 @@ formula en términos del trabajo que el usuario intenta lograr:
 
 | Bloque | Sin lente JTBD (mal) | Con lente JTBD (bien) |
 |--------|---------------------|----------------------|
-| Propósito | "Entender cómo Caty planifica horarios" | "Entender qué TRABAJO intenta lograr Caty cuando planifica horarios y qué fricciones experimenta" |
+| Propósito | "Entender cómo la responsable de tienda planifica horarios" | "Entender qué TRABAJO intenta lograr la responsable de tienda cuando planifica horarios y qué fricciones experimenta" |
 | Criterios | "¿Qué herramientas usa?" | "¿Cuál es el trigger del trabajo? ¿Qué struggle real tiene? ¿Qué motivaciones la mueven?" |
 | Observaciones | "Copia de hace 6 semanas" | "Copia de hace 6 semanas → workaround que señala que la herramienta no sirve el job" |
-| Aprendizajes | "MOT actúa como editor" | "El TRABAJO de planificar horarios está mal servido: MOT no cubre el job funcional y obliga a recurrir al PDF" |
+| Aprendizajes | "La herramienta de turnos actúa como editor" | "El TRABAJO de planificar horarios está mal servido: la herramienta de turnos no cubre el job funcional y obliga a recurrir al PDF" |
 | Conclusiones | "Falta integrar datos del PDF" | "JTBD: 'Cuando tengo que planificar la semana, quiero cuadrar horas y recursos rápidamente, para sentirme segura de que todo va a funcionar'" |
 
 **Antipatrón clave:** Confundir funcionalidades con trabajos.
@@ -433,8 +433,8 @@ Esto es lo que YO creo, no lo que el participante dijo/hizo:
 |------------|---------|----------------------|------------|
 | Funcionalidad disfrazada | "Quiero un botón más grande" | Describe solución, no trabajo | "Necesito completar la acción rápido cuando estoy bajo presión" |
 | Tarea sin contexto | "Registrar pedido" | Falta trigger, struggle, motivación | "Cuando llega un pedido urgente, necesito registrarlo rápido para no perder el turno" |
-| Persona sin situación | "Como MOT quiero planificar" | Ignora el contexto situacional | "Cuando tengo que cuadrar caudales el lunes a primera hora..." |
-| Motivación solo funcional | "Para optimizar tiempos" | Falta emocional y social | Añadir: "Para sentirme segura" + "Para que DT vea que gestiono bien" |
+| Persona sin situación | "Como responsable de tienda quiero planificar" | Ignora el contexto situacional | "Cuando tengo que cuadrar la caja el lunes a primera hora..." |
+| Motivación solo funcional | "Para optimizar tiempos" | Falta emocional y social | Añadir: "Para sentirme segura" + "Para que mi responsable vea que gestiono bien" |
 | Job genérico | "Gestionar el proceso" | Demasiado amplio para ser útil | Especificar: "Cuadrar horas del equipo respetando restricciones del convenio" |
 
 ---
@@ -541,10 +541,10 @@ Esto es lo que YO creo, no lo que el participante dijo/hizo:
 
 | Antipatrón | Ejemplo malo | Corrección |
 |------------|-------------|------------|
-| Demasiado amplio | "Entender la experiencia de tienda" | "Entender qué trabajo intenta lograr la MOT cuando planifica horarios" |
+| Demasiado amplio | "Entender la experiencia de tienda" | "Entender qué trabajo intenta lograr la responsable de tienda cuando planifica horarios" |
 | Centrado en solución | "Validar si la nueva herramienta ayuda" | "Descubrir qué fricciones tiene al planificar horarios (antes de pensar en soluciones)" |
 | Sin Job Performer | "Entender el proceso de reposición" | "Entender qué trabajo intenta lograr el reponedor cuando repone producto fresco" |
-| Terminología PRD | "Evaluar el PRD de Control Colmena" | "Entender qué trabajo intenta lograr el responsable de AutoStore cuando monitoriza la operación" |
+| Terminología PRD | "Evaluar el PRD de Control de Almacén" | "Entender qué trabajo intenta lograr el responsable del almacén automatizado cuando monitoriza la operación" |
 
 ---
 
@@ -637,10 +637,10 @@ Qué esperamos descubrir con cada uno que el otro no podría capturar.]
 ```markdown
 **Criterio 1: ¿Cuál es el trigger real que activa el trabajo de planificar horarios?**
 - Componente JTBD: Trigger
-- Cómo verificar: >=3 MOTs describen qué les hace empezar la planificación
+- Cómo verificar: >=3 responsables de tienda describen qué les hace empezar la planificación
 - Umbral: Patrón consistente en >=3 de N observaciones/entrevistas
 
-**Criterio 2: ¿Qué struggle experimenta al intentar cuadrar caudales con restricciones?**
+**Criterio 2: ¿Qué struggle experimenta al intentar cuadrar turnos con restricciones?**
 - Componente JTBD: Struggle
 - Cómo verificar: Observar workarounds activos + quotes con emoción
 - Umbral: >=2 workarounds observados + >=3 mentions espontáneas
